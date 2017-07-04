@@ -26,7 +26,6 @@ import java.util.List;
  */
 
 public class CrimeListFragment extends Fragment {
-    public static final String TAG = "CrimeListFragment";
 
     private RecyclerView mCrimeRecyclerView;
     private CrimeAdapter mAdapter;
@@ -82,6 +81,7 @@ public class CrimeListFragment extends Fragment {
             mCrimeRecyclerView.setAdapter(mAdapter);
         }
         else{
+            mAdapter.setCrimes(crimes);
             mAdapter.notifyDataSetChanged();
         }
 
@@ -158,5 +158,9 @@ public class CrimeListFragment extends Fragment {
             return mCrimes.size();
         }
 
+
+        public void setCrimes(List<Crime> crimes){
+            mCrimes = crimes;
+        }
     }
 }
