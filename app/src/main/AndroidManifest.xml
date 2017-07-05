@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="com.cursoslicad.android.criminalintent">
+    <uses-permission
+        android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="18"/>
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"/>
 
     <application
         android:allowBackup="true"
@@ -18,5 +24,14 @@
         <activity android:name=".CrimeActivity"
             android:parentActivityName=".CrimeListActivity">
         </activity>
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.cursoslicad.android.criminalintent.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/files"/>
+        </provider>
     </application>
 </manifest>

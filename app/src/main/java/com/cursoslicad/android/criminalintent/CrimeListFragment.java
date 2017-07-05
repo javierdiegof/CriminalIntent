@@ -81,8 +81,8 @@ public class CrimeListFragment extends Fragment {
             mCrimeRecyclerView.setAdapter(mAdapter);
         }
         else{
-            mAdapter.setCrimes(crimes);
-            mAdapter.notifyDataSetChanged();
+
+            //mAdapter.notifyDataSetChanged();
         }
 
     }
@@ -158,9 +158,5 @@ public class CrimeListFragment extends Fragment {
             return mCrimes.size();
         }
 
-
-        public void setCrimes(List<Crime> crimes){
-            mCrimes = crimes;
-        }
     }
 }
